@@ -22,7 +22,9 @@
     </div>
 
     <div class="uk-navbar-right">
-        <a href="{% url 'post_new' %}" uk-icon="icon: plus"></a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" uk-icon="icon: plus"></a>
+        {% endif %}
     </div>
 </nav>
 
